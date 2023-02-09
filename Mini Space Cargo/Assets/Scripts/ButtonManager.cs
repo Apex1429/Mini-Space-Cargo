@@ -10,6 +10,16 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void SelectShipTemp()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void JobList()
+    {
+        SceneManager.LoadScene(3);
+    }
     
 
 }
