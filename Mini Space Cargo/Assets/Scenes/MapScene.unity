@@ -423,7 +423,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 294043865}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1640762241}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294043865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,22 +1170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allLocations:
-  - LocationID: 1
-    SystemID: 1
-    LocationName: Mercury Station
-    SystemName: Sol
-    DockType: Orbital
-    IndustryType: Research
-    LocationImage: {fileID: 21300000, guid: 8d93f8b646fad08429a3686590a61bf7, type: 3}
-    DistanceFromStar: 0.4
-  - LocationID: 2
-    SystemID: 1
-    LocationName: Venus Station
-    SystemName: Sol
-    DockType: Orbital
-    IndustryType: Mining
-    LocationImage: {fileID: 21300000, guid: 71ac7bd0a112e0445a75d4cf6d697128, type: 3}
-    DistanceFromStar: 0.7
+  - locationID: 1
+    systemID: 1
+    locationName: Mercury Station
+    systemName: Sol
+    dockType: Orbital
+    industryType: Research
+    locationImage: {fileID: 21300000, guid: 8d93f8b646fad08429a3686590a61bf7, type: 3}
+    distanceFromStar: 0.4
 --- !u!114 &1640762246
 MonoBehaviour:
   m_ObjectHideFlags: 0

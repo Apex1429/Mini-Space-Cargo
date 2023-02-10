@@ -20,6 +20,11 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void Map()
+    {
+        SceneManager.LoadScene(4);
+    }
     
 
 }

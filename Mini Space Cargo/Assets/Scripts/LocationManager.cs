@@ -1,48 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using TMPro;
 using UnityEngine.UI;
+using System;
+
+
 
 public class LocationManager : MonoBehaviour
 {
-   [Serializable]
+    [Serializable]
     public struct Locations
     {
-        public int LocationID;
-        public int SystemID;
+        public int locationID;
+        public int systemID;
         
-        public string LocationName;
-        public string SystemName;
-        public string DockType;
-        public string IndustryType;
+        public string locationName;
+        public string systemName;
+        public string dockType;
+        public string industryType;
 
-        public Sprite LocationImage;
+        public Sprite locationImage;
 
-        public float DistanceFromStar; 
+        public float distanceFromStar; 
+
+    
     } 
-
+    
     [SerializeField] Locations[] allLocations; 
 
     void Start()
     {
-        GameObject MapSelectorTemplate = transform.GetChild (0).gameObject;
+        
+        GameObject mapSelectorTemplate = transform.GetChild (0).gameObject;
         GameObject g;
         int N = allLocations.Length;
         for (int i = 0; i < N; i++)
         {
-            g = Instantiate (MapSelectorTemplate, transform);
-            g.transform.GetChild (0).GetComponent <Image> ().sprite = allLocations [i].LocationImage;
-            g.transform.GetChild (1).GetComponent <Text> ().text = allLocations [i].SystemName;
-            g.transform.GetChild (2).GetComponent <Text> ().text = allLocations [i].LocationName;
-            g.transform.GetChild (3).GetComponent <Text> ().text = allLocations [i].DockType;
-            g.transform.GetChild (4).GetComponent <Text> ().text = allLocations [i].IndustryType;
-            g.transform.GetChild (5).GetComponent <Text> ().text = allLocations [i].SystemName;  
+            g = Instantiate (mapSelectorTemplate, transform);
+            g.transform.GetChild (0).GetComponent <Image> ().sprite = allLocations [i].locationImage;
+            g.transform.GetChild (1).GetComponent <Text> ().text = allLocations [i].systemName;
+            g.transform.GetChild (2).GetComponent <Text> ().text = allLocations [i].locationName;
+            g.transform.GetChild (3).GetComponent <Text> ().text = allLocations [i].dockType;
+            g.transform.GetChild (4).GetComponent <Text> ().text = allLocations [i].industryType;
 
             
         }
-        Destroy (MapSelectorTemplate);
+        Destroy (mapSelectorTemplate);
     }
 
 
