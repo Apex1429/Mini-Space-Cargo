@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 
 
 public class LocationManager : MonoBehaviour
 {
+    
     [Serializable]
-    public struct Locations
+    public struct MapLocations
     {
         public int locationID;
         public int systemID;
@@ -24,22 +26,22 @@ public class LocationManager : MonoBehaviour
     
     } 
     
-    [SerializeField] Locations[] allLocations; 
+    [SerializeField] MapLocations[] allMapLocations; 
 
     void Start()
     {
         
         GameObject mapSelectorTemplate = transform.GetChild (0).gameObject;
         GameObject g;
-        int N = allLocations.Length;
+        int N = allMapLocations.Length;
         for (int i = 0; i < N; i++)
         {
             g = Instantiate (mapSelectorTemplate, transform);
-            g.transform.GetChild (0).GetComponent <Image> ().sprite = allLocations [i].locationImage;
-            g.transform.GetChild (1).GetComponent <Text> ().text = allLocations [i].systemName;
-            g.transform.GetChild (2).GetComponent <Text> ().text = allLocations [i].locationName;
-            g.transform.GetChild (3).GetComponent <Text> ().text = allLocations [i].dockType;
-            g.transform.GetChild (4).GetComponent <Text> ().text = allLocations [i].industryType;
+            g.transform.GetChild (0).GetComponent <Image> ().sprite = allMapLocations [i].locationImage;
+            g.transform.GetChild (1).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].systemName;
+            g.transform.GetChild (2).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].locationName;
+            g.transform.GetChild (3).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].dockType;
+            g.transform.GetChild (4).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].industryType;
 
             
         }
