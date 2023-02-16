@@ -2,7 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
+public static class ButtonExtension
+{
+	public static void AddEventListener<T> (this Button button, T param, Action<T> OnClick)
+	{
+		button.onClick.AddListener (delegate() {
+			OnClick (param);
+		});
+	}
+}
 
 
 public class LocationManager : MonoBehaviour
@@ -43,10 +53,28 @@ public class LocationManager : MonoBehaviour
             g.transform.GetChild (3).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].dockType;
             g.transform.GetChild (4).GetComponent <TextMeshProUGUI> ().text = allMapLocations [i].industryType;
 
+            g.GetComponent <Button> ().AddEventListener (i, ItemClicked);
             
         }
         Destroy (mapSelectorTemplate);
     }
+    	void ItemClicked (int itemIndex)
+	{
+		Debug.Log ("------------item " + itemIndex + " clicked---------------");
+		Debug.Log ("name " + allMapLocations [itemIndex].locationName);
+		Debug.Log ("desc " + allMapLocations [itemIndex].systemName);
+
+        if (itemIndex == 1 )
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (itemIndex == 2)
+        {
+            SceneManager.LoadScene(5);
+        }
+    }
+
+
 
 
 }
